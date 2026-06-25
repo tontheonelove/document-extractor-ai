@@ -3,6 +3,8 @@
 ระบบ Extract ข้อมูลจากเอกสาร (PDF/Image) แบบอัจฉริยะด้วย AI Model **NuExtract3**  
 รองรับทั้ง Structured JSON, Markdown และ Thinking Mode พร้อม Human-in-the-Loop (HITL) Editor
 
+<img src=ex.png/>
+
 ---
 
 ## ✨ Features

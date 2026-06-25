@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="th" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NuExtract Pro | Templates</title>
+    <script>
+        (function() {
+            // Description: อ่าน theme จาก localStorage และ set class ทันทีเพื่อป้องกัน FOWT
+            try {
+                const theme = localStorage.getItem('nuextract-theme') || 'dark';
+                document.documentElement.className = theme;
+            } catch (e) {
+                document.documentElement.className = 'dark';
+            }
+        })();
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: { extend: { colors: { primary: '#38bdf8', secondary: '#818cf8' } } }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== BASE STYLES ===== */
+        body { font-family: 'Inter', sans-serif; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in-up { animation: fadeInUp 0.3s ease-out; }
+        
+        /* ===== LIGHT MODE OVERRIDE (INLINE) ===== */
+        /* Base & Layout */
+        html.light body { background-color: #f9fafb !important; color: #111827 !important; }
+        html.light aside { background-color: #ffffff !important; border-right: 1px solid #e5e7eb !important; }
+        html.light header { background-color: #ffffff !important; border-bottom: 1px solid #e5e7eb !important; }
+        
+        /* Containers & Cards */
+        html.light .bg-slate-950 { background-color: #f9fafb !important; }
+        html.light .bg-slate-900 { background-color: #ffffff !important; border-color: #e5e7eb !important; }
+        html.light .bg-slate-800 { background-color: #f3f4f6 !important; }
+        html.light .bg-slate-800\/50 { background-color: #f9fafb !important; }
+        html.light .border-slate-800 { border-color: #e5e7eb !important; }
+        html.light .border-slate-700 { border-color: #d1d5db !important; }
+        
+        /* Hover States */
+        html.light .hover\:bg-slate-800:hover { background-color: #e5e7eb !important; }
+        html.light .hover\:bg-slate-700:hover { background-color: #d1d5db !important; }
+        
+        /* Typography */
+        html.light .text-slate-200 { color: #111827 !important; }
+        html.light .text-slate-300 { color: #374151 !important; }
+        html.light .text-slate-400 { color: #6b7280 !important; }
+        html.light .text-slate-500 { color: #9ca3af !important; }
+        html.light .text-slate-600 { color: #4b5563 !important; }
+        
+        /* Inputs & Forms */
+        html.light input, 
+        html.light textarea, 
+        html.light select { 
+            background-color: #ffffff !important; 
+            border-color: #d1d5db !important; 
+            color: #111827 !important; 
+        }
+        html.light input::placeholder, 
+        html.light textarea::placeholder { color: #9ca3af !important; }
+        
+        /* Code Blocks & Modals */
+        html.light pre, 
+        html.light code { background-color: #f3f4f6 !important; color: #111827 !important; }
+        html.light .fixed.inset-0.bg-black\/70 { background-color: rgba(0,0,0,0.4) !important; }
+        html.light .fixed.inset-0.bg-black\/50 { background-color: rgba(0,0,0,0.2) !important; }
+
+        /* Tables */
+        html.light table thead { background-color: #f9fafb !important; }
+        html.light table tbody tr { border-bottom-color: #e5e7eb !important; }
+        html.light table tbody tr:hover { background-color: #f9fafb !important; }
+
+        /* Navigation Active State */
+        html.light a.bg-slate-800.text-white { 
+            background-color: #e0f2fe !important; 
+            color: #0284c7 !important; 
+        }
+        
+        /* Theme Toggle Animation */
+        #themeToggle { transition: transform 0.3s ease !important; }
+        #themeToggle:hover { transform: rotate(20deg); }
+        #themeToggle:active { transform: rotate(0deg) scale(0.9); }
+        
+        /* Smooth transitions for all elements */
+        * { transition: background-color 0.3s ease, border-color 0.3s ease, color 0.2s ease; }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-200 h-screen flex overflow-hidden">
+    <aside class="w-64 bg-slate-900 border-r border-slate-800 flex flex-col">
+        <div class="p-6 border-b border-slate-800">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
+                    <i class="fas fa-file-invoice text-white"></i>
+                </div>
+                <h1 class="text-xl font-bold">NuExtract<span class="text-primary">Pro</span></h1>
+            </div>
+        </div>
+        <nav class="flex-1 p-4 space-y-2">
+            <a href="index.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition-all">
+                <i class="fas fa-chart-line w-5"></i> Dashboard
+            </a>
+            <a href="extractor.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition-all">
+                <i class="fas fa-magic w-5"></i> Extractor
+            </a>
+            <a href="documents.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition-all">
+                <i class="fas fa-folder-open w-5"></i> Documents
+            </a>
+            <a href="templates.html" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-slate-800 text-white transition-all">
+                <i class="fas fa-code w-5"></i> Templates
+            </a>
+        </nav>
+        <div class="p-4 border-t border-slate-800">
+            <div id="backendStatus">
+                <div class="flex items-center gap-2 text-sm text-slate-400">
+                    <div class="w-2 h-2 bg-slate-500 rounded-full animate-pulse"></div>
+                    Checking...
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="flex-1 flex flex-col overflow-hidden">
+        <header class="h-16 bg-slate-900/50 border-b border-slate-800 flex items-center justify-between px-6">
+            <div class="flex items-center gap-4 flex-1">
+                <div class="relative w-96">
+                    <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-500"></i>
+                    <input type="text" placeholder="Search..." class="w-full bg-slate-800 border border-slate-700 rounded-lg py-2 pl-10 pr-4 focus:outline-none focus:border-primary">
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <!-- ✅ Theme Toggle Button -->
+                <button id="themeToggle" class="text-slate-400 hover:text-primary p-2 rounded-lg hover:bg-slate-800 transition-all" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="text-slate-400 hover:text-white"><i class="fas fa-bell"></i></button>
+                <div class="flex items-center gap-2">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=admin" class="w-8 h-8 rounded-full">
+                    <span class="text-sm font-medium">Admin</span>
+                </div>
+            </div>
+        </header>
+
+        <div id="pageContent" class="flex-1 overflow-auto p-6"></div>
+    </main>
+
+    <div id="toastContainer" class="fixed bottom-4 right-4 z-50 space-y-2"></div>
+    <div id="modalContainer"></div>
+
+    <script type="module" src="js/api.js"></script>
+    <script type="module" src="js/templates.js"></script>
+    <script type="module">
+        import { initStatusChecker } from './js/api.js';
+        initStatusChecker();
+    </script>
+    <script type="module">
+        import { initTheme } from './js/theme.js';
+        initTheme();
+    </script>
+</body>
+</html>

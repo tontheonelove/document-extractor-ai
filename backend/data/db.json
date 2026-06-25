@@ -1,0 +1,40 @@
+{
+  "documents": [],
+  "templates": [
+    {
+      "id": "1782266279102",
+      "name": "receipt",
+      "schema": {
+        "ชื่อ_บริษัท": "string",
+        "เลข_ผู้เสียภาษี": "verbatim-string",
+        "ที่อยู่": "verbatim-string",
+        "เบอร์โทรศัพท์": "verbatim-string",
+        "เลขที่เอกสาร": "verbatim-string",
+        "วันที่": "date",
+        "พนักงานขาย": "verbatim-string",
+        "รายการสินค้า": "string",
+        "รวมเงิน": "number",
+        "ส่วนลด": "number",
+        "VAT": "number",
+        "รวมทั้งสิ้น": "number"
+      },
+      "created_at": "2026-06-24T01:57:59.102Z",
+      "icl_examples": []
+    },
+    {
+      "id": "1782371606612",
+      "name": "driver_license",
+      "schema": {
+        "ชื่อ": "string",
+        "Name": "verbatim-string",
+        "วันอนุญาต": "date",
+        "วันสิ้นอายุ": "date",
+        "No.": "number",
+        "ฉบับที่": "number",
+        "เกิดวันที่": "date"
+      },
+      "created_at": "2026-06-25T07:13:26.612Z",
+      "icl_examples": []
+    }
+  ]
+}

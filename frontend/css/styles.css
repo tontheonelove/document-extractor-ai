@@ -1,0 +1,369 @@
+/* Description: Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #0f172a; }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+/* Description: Glassmorphism Effect */
+.glass {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Description: Animations */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up { animation: fadeInUp 0.5s ease-out forwards; }
+
+@keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 15px rgba(56, 189, 248, 0.3); }
+    50% { box-shadow: 0 0 25px rgba(56, 189, 248, 0.6); }
+}
+.glow-effect { animation: pulseGlow 2s infinite; }
+
+/* Description: Modern Dropzone */
+.dropzone-active { border-color: #38bdf8 !important; background: rgba(56, 189, 248, 0.1) !important; }
+
+/* Description: JSON Editor Styling */
+.json-editor {
+    font-family: 'Fira Code', monospace;
+    background: #020617;
+    color: #38bdf8;
+    line-height: 1.5;
+    tab-size: 2;
+}
+
+/* Description: Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ==========================================
+   LIGHT MODE STYLES (เพิ่ม !important ทุกตัว)
+   Description: ปรับแต่งสีสำหรับ Light theme
+   ========================================== */
+
+/* Smooth transitions */
+* {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.2s ease !important;
+}
+
+/* ===== LIGHT MODE BASE ===== */
+html.light {
+    --bg-primary: #f9fafb;
+    --bg-secondary: #ffffff;
+    --border-color: #e5e7eb;
+    --text-primary: #111827;
+    --text-secondary: #6b7280;
+}
+
+html.light body {
+    background-color: #f9fafb !important;
+    color: #111827 !important;
+}
+
+html.light aside {
+    background-color: #ffffff !important;
+    border-right-color: #e5e7eb !important;
+}
+
+html.light header {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    border-bottom-color: #e5e7eb !important;
+    backdrop-filter: blur(8px) !important;
+}
+
+/* ===== LIGHT MODE NAVIGATION ===== */
+html.light .nav-btn {
+    color: #6b7280 !important;
+}
+
+html.light .nav-btn:hover {
+    background-color: #f3f4f6 !important;
+    color: #111827 !important;
+}
+
+html.light .nav-btn.active,
+html.light a[href="index.html"].bg-slate-800,
+html.light a[href="extractor.html"].bg-slate-800,
+html.light a[href="documents.html"].bg-slate-800,
+html.light a[href="templates.html"].bg-slate-800 {
+    background-color: #e0f2fe !important;
+    color: #0284c7 !important;
+}
+
+/* ===== LIGHT MODE CARDS & CONTAINERS ===== */
+html.light .bg-slate-900 {
+    background-color: #ffffff !important;
+    border-color: #e5e7eb !important;
+}
+
+html.light .border-slate-800 {
+    border-color: #e5e7eb !important;
+}
+
+html.light .bg-slate-800 {
+    background-color: #f3f4f6 !important;
+}
+
+html.light .bg-slate-800\/50 {
+    background-color: rgba(243, 244, 246, 0.5) !important;
+}
+
+html.light .hover\:bg-slate-800:hover {
+    background-color: #e5e7eb !important;
+}
+
+html.light .bg-slate-950 {
+    background-color: #ffffff !important;
+}
+
+/* ===== LIGHT MODE TEXT ===== */
+html.light .text-slate-200 {
+    color: #111827 !important;
+}
+
+html.light .text-slate-300 {
+    color: #374151 !important;
+}
+
+html.light .text-slate-400 {
+    color: #6b7280 !important;
+}
+
+html.light .text-slate-500 {
+    color: #9ca3af !important;
+}
+
+html.light .text-slate-600 {
+    color: #4b5563 !important;
+}
+
+/* ===== LIGHT MODE INPUTS ===== */
+html.light input,
+html.light textarea,
+html.light select {
+    background-color: #f9fafb !important;
+    border-color: #d1d5db !important;
+    color: #111827 !important;
+}
+
+html.light input:focus,
+html.light textarea:focus,
+html.light select:focus {
+    border-color: #0284c7 !important;
+    background-color: #ffffff !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+    color: #9ca3af !important;
+}
+
+/* ===== LIGHT MODE TABLES ===== */
+html.light table thead,
+html.light .bg-slate-800.border-b {
+    background-color: #f9fafb !important;
+}
+
+html.light table tbody tr {
+    border-bottom-color: #e5e7eb !important;
+}
+
+html.light table tbody tr:hover {
+    background-color: #f9fafb !important;
+}
+
+/* ===== LIGHT MODE MODALS ===== */
+html.light .modal-overlay {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+html.light .fixed.inset-0.bg-black\/70 {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+html.light .fixed.inset-0.bg-black\/50 {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+/* ===== LIGHT MODE CODE BLOCKS ===== */
+html.light pre,
+html.light code {
+    background-color: #f3f4f6 !important;
+    color: #111827 !important;
+}
+
+html.light .text-green-400 {
+    color: #16a34a !important;
+}
+
+html.light .text-blue-400 {
+    color: #2563eb !important;
+}
+
+html.light .text-red-400 {
+    color: #dc2626 !important;
+}
+
+html.light .text-yellow-400 {
+    color: #d97706 !important;
+}
+
+html.light .text-purple-400 {
+    color: #9333ea !important;
+}
+
+/* ===== LIGHT MODE BUTTONS ===== */
+html.light .bg-primary {
+    background-color: #0284c7 !important;
+}
+
+html.light .hover\:bg-primary\/90:hover {
+    background-color: #0369a1 !important;
+}
+
+html.light .text-primary {
+    color: #0284c7 !important;
+}
+
+html.light .border-primary\/20 {
+    border-color: rgba(2, 132, 199, 0.2) !important;
+}
+
+html.light .bg-primary\/10 {
+    background-color: rgba(2, 132, 199, 0.1) !important;
+}
+
+html.light .hover\:bg-primary\/20:hover {
+    background-color: rgba(2, 132, 199, 0.2) !important;
+}
+
+/* ===== LIGHT MODE PROGRESS BAR ===== */
+html.light .bg-slate-800.rounded-full {
+    background-color: #e5e7eb !important;
+}
+
+/* ===== LIGHT MODE DROPZONE ===== */
+html.light .border-dashed {
+    border-color: #d1d5db !important;
+}
+
+html.light .hover\:border-primary:hover {
+    border-color: #0284c7 !important;
+}
+
+/* ===== LIGHT MODE TOAST ===== */
+html.light .bg-green-500 {
+    background-color: #16a34a !important;
+}
+
+html.light .bg-red-500 {
+    background-color: #dc2626 !important;
+}
+
+html.light .bg-blue-500 {
+    background-color: #2563eb !important;
+}
+
+/* ===== LIGHT MODE BADGES ===== */
+html.light .bg-green-500\/10 {
+    background-color: rgba(22, 163, 74, 0.1) !important;
+}
+
+html.light .bg-blue-500\/10 {
+    background-color: rgba(37, 99, 235, 0.1) !important;
+}
+
+html.light .bg-red-500\/10 {
+    background-color: rgba(220, 38, 38, 0.1) !important;
+}
+
+html.light .bg-yellow-500\/10 {
+    background-color: rgba(217, 119, 6, 0.1) !important;
+}
+
+html.light .bg-purple-500\/10 {
+    background-color: rgba(147, 51, 234, 0.1) !important;
+}
+
+/* ===== LIGHT MODE STATUS ===== */
+html.light .text-green-400 .bg-green-400 {
+    background-color: #16a34a !important;
+}
+
+html.light .text-red-400 .bg-red-400 {
+    background-color: #dc2626 !important;
+}
+
+/* ===== LIGHT MODE GRADIENTS ===== */
+html.light .bg-gradient-to-br.from-primary.to-secondary {
+    background: linear-gradient(to bottom right, #0284c7, #7c3aed) !important;
+}
+
+/* ===== LIGHT MODE SCROLLBAR ===== */
+html.light ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+html.light ::-webkit-scrollbar-track {
+    background: #f3f4f6 !important;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+    background: #d1d5db !important;
+    border-radius: 5px;
+}
+
+html.light ::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af !important;
+}
+
+/* ===== THEME TOGGLE BUTTON ===== */
+#themeToggle {
+    transition: transform 0.3s ease !important;
+}
+
+#themeToggle:hover {
+    transform: rotate(20deg);
+}
+
+#themeToggle:active {
+    transform: rotate(0deg) scale(0.9);
+}
+
+/* ===== ADDITIONAL LIGHT MODE FIXES ===== */
+html.light .bg-blue-500\/10.border-blue-500\/20 {
+    background-color: rgba(37, 99, 235, 0.05) !important;
+    border-color: rgba(37, 99, 235, 0.2) !important;
+}
+
+html.light .hover\:bg-blue-500\/20:hover {
+    background-color: rgba(37, 99, 235, 0.15) !important;
+}
+
+html.light .fa-file-pdf.text-red-400 {
+    color: #dc2626 !important;
+}
+
+html.light .fa-file-image.text-blue-400 {
+    color: #2563eb !important;
+}

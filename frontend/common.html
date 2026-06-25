@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="th" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NuExtract Pro | Document AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: { primary: '#38bdf8', secondary: '#818cf8' }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-slate-950 text-slate-200 font-['Inter'] h-screen flex overflow-hidden">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-slate-900 border-r border-slate-800 flex flex-col">
+        <div class="p-6 border-b border-slate-800">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
+                    <i class="fas fa-file-invoice text-white"></i>
+                </div>
+                <h1 class="text-xl font-bold">NuExtract<span class="text-primary">Pro</span></h1>
+            </div>
+        </div>
+        
+        <nav class="flex-1 p-4 space-y-2">
+            <a href="dashboard.html" class="nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition-all">
+                <i class="fas fa-chart-line w-5"></i> Dashboard
+            </a>
+            <a href="extractor.html" class="nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition-all">
+                <i class="fas fa-magic w-5"></i> Extractor
+            </a>
+            <a href="documents.html" class="nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition-all">
+                <i class="fas fa-folder-open w-5"></i> Documents
+            </a>
+            <a href="templates.html" class="nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition-all">
+                <i class="fas fa-code w-5"></i> Templates
+            </a>
+        </nav>
+        
+        <div class="p-4 border-t border-slate-800">
+            <div id="backendStatus">
+                <div class="flex items-center gap-2 text-sm text-slate-400">
+                    <div class="w-2 h-2 bg-slate-500 rounded-full animate-pulse"></div>
+                    Checking...
+                </div>
+            </div>
+        </div>
+    </aside>
+    
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col">
+        <!-- Topbar -->
+        <header class="h-16 bg-slate-900/50 border-b border-slate-800 flex items-center justify-between px-6">
+            <div class="flex items-center gap-4 flex-1">
+                <div class="relative w-96">
+                    <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-500"></i>
+                    <input type="text" placeholder="Search..." class="w-full bg-slate-800 border border-slate-700 rounded-lg py-2 pl-10 pr-4 focus:outline-none focus:border-primary">
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <!-- ✅ Theme Toggle Button -->
+                <button id="themeToggle" class="text-slate-400 hover:text-primary p-2 rounded-lg hover:bg-slate-800 transition-all" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="text-slate-400 hover:text-white"><i class="fas fa-bell"></i></button>
+                <div class="flex items-center gap-2">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=admin" class="w-8 h-8 rounded-full">
+                    <span class="text-sm font-medium">Admin</span>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Page Content -->
+        <div id="pageContent" class="flex-1 overflow-auto p-6">
+            <!-- Content will be loaded here -->
+        </div>
+    </main>
+    
+    <!-- Toast Container -->
+    <div id="toastContainer" class="fixed bottom-4 right-4 z-50 space-y-2"></div>
+    
+    <!-- Modal Container -->
+    <div id="modalContainer"></div>
+    
+    <script type="module" src="js/api.js"></script>
+    <script type="module" src="js/common.js"></script>
+    <script type="module">
+        import { initStatusChecker } from './js/api.js';
+        initStatusChecker();
+    </script>
+    <script type="module">
+        import { initTheme } from './js/theme.js';
+        initTheme();
+    </script>
+</body>
+</html>
